@@ -1,0 +1,4 @@
+import hashlib, binascii
+
+sha256hash = hashlib.sha256(b'cryptography').digest()
+print("SHA-256('cryptography') = ", binascii.hexlify(sha256hash))
