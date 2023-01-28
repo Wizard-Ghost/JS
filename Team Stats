@@ -1,0 +1,72 @@
+const team = {
+  _players: [
+    {
+    firstName: 'Pete', 
+    lastName: 'Wheeler', 
+    age: 54
+    },
+    {
+    firstName: 'Anthony', 
+    lastName: 'Hopkins', 
+    age: 72
+    },
+    {
+    firstName: 'Adam', 
+    lastName: 'Walker', 
+    age: 34
+    }
+  ],
+  _games: [
+    {
+      opponent: 'Chickago Bulls', 
+      teamPoints: 18, 
+      opponentPoints: 16
+    },
+    {
+      opponent: 'Illinois Tigers', 
+      teamPoints: 85, 
+      opponentPoints: 76,
+    },
+    {
+      opponent: 'Boston Demons', 
+      teamPoints: 99, 
+      opponentPoints: 98
+     }
+    ],
+  get players() {
+    if (this._players) {
+      return this._players;
+    } else {
+      return 'Something miss wrong. Try again.';
+    }
+  },
+  get games() {
+    if (this._games) {
+    return this._games;
+    } else {
+      return 'Something miss wrong. Try again.';
+    }
+  },
+  addPlayer(firstName, lastName, age) {
+    let player = {
+      firstName,
+      lastName,
+      age
+    };
+    this._players.push(player);
+  },
+  addGame(opponent, teamPoints, opponentPoints) {
+    let game = {
+      opponent,
+      teamPoints,
+      opponentPoints
+    };
+    this._games.push(game);
+  }
+};
+
+team.addPlayer('Bugs', 'Bunny', 76);
+team.addGame('Titans', 100, 98);
+console.log(team.players);
+console.log(team.games);
+
